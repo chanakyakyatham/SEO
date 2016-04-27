@@ -1,0 +1,36 @@
+<!--When a JSON-LD document's top-level structure is an object that contains no other 
+properties than @graph and optionally @context (properties that are not mapped to an IRI 
+or a keyword are ignored), @graph is considered to express the otherwise implicit default graph. 
+This mechanism can be useful when a number of nodes exist at the document's top level that 
+share the same context, which is, e.g., the case when a document is flattened. The @graph 
+keyword collects such nodes in an array and allows the use of a shared context. 
+
+From https://www.w3.org/TR/json-ld/#h3_named-graphs -->
+
+<script type="application/json">
+{
+  "@context": "http://schema.org",
+  "@graph": [
+{
+    "@type": "Question",
+    "text": "What is a cat?",
+    "dateCreated": "2010-11-04T20:07Z",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "(The text of the accepted answer goes here...).",
+        "dateCreated": "2010-12-01T22:01Z"
+    }
+},
+{
+    "@type": "Question",
+    "text": "What is a dog?",
+    "dateCreated": "2010-11-04T20:07Z",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "(The text of the accepted answer goes here...).",
+        "dateCreated": "2010-12-01T22:01Z"
+    }
+}
+]
+}
+</script>
